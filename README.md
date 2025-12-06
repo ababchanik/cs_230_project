@@ -1,5 +1,7 @@
 # TI-Visco-MCC Small — Sequential Model (CS230)
 
+Note: model_training_temp is the working dir
+
 End-to-end pipeline to train and evaluate a sequential model on synthetic
 transversely-isotropic elasto-viscoplastic Cam-Clay stress–strain trajectories.
 
