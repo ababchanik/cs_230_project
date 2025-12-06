@@ -4,7 +4,7 @@ import datetime
 import torch
 from torch.utils.data import DataLoader
 import torch.optim as optim
-import wandb
+import wandb 
 
 
 from model import SeqModel
