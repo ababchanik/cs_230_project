@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ------------------------------------------------------------------
-# Usage:
+# Usage: 
 #   ./run.sh
 #
 #   i_spec : which trajectory index to use for rollout & plots (default 0)
