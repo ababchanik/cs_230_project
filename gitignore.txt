@@ -1,0 +1,34 @@
+# ==========================
+# Project File
+# ==========================
+*.npz
+*.pt
+*.ckpt
+*.csv
+!data_generation/material_parameters.csv
+*.png
+*.log
+*.txt
+
+# ==========================
+# IDE / Editor Config
+# ==========================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# ==========================
+# WANBD
+# ==========================
+*.json
+*.wandb
+*.yaml
+latest-run
+
+# ==========================
+# SHERLOCK
+# ==========================
+*.err
+*.out
