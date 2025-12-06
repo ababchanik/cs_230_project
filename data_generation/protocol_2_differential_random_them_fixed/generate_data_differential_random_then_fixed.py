@@ -1,7 +1,7 @@
 """
     Random-walk dataset where strain is held fixed after the first plastic step,
     thus allowing stress relaxation.
-
+ 
     Workflow per instance i:
       - Use one_satep_strain_random_walk to generate candidate increments deps_rw.
       - March in time, updating stress with update_cauchy_stress.
