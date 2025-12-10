@@ -1,28 +1,64 @@
 # TI-Visco-MCC Small — Sequential Model (CS230)
 
+Windowed Sequence-to-Sequence Learning for Transversely-Isotropic Modified Cam-Clay (TI-MCC)
+
 Note: model_training_temp is the working dir
 
 End-to-end pipeline to train and evaluate a sequential model on synthetic
 transversely-isotropic elasto-viscoplastic Cam-Clay stress–strain trajectories.
 
+This repository contains:
+
+Synthetic data generation pipelines for multiple strain-increment protocols tailored to TI-MCC small-strain constitutive modeling.
+Physics-guided neural network training code (GRU-based seq-to-seq model).
+Rolling prediction and evaluation tools reproducing stress relaxation, p–q paths, and stress–strain curves.
+
+
 ## Repo layout
 
 ```
-./
-├─ data_generation/
-│  ├─ data_stress_strain.npz         # input dataset (eps, epse, deps, sig, …)
-│  ├─ generate_data_random_walk.py    # (optional) data generator
-│  └─ inspect_stress_invariants.py    # (optional) p–q inspectors
-├─ model_training/
-│  ├─ split_dataset.py                # adds train/dev/eval labels
-│  ├─ model.py                        # SeqModel and losses
-│  ├─ main.py                         # training entry
-│  ├─ test_stress_strain.py           # evaluation/plotting
-│  ├─ tensor_utils.py                 # Voigt helpers
-│  ├─ run.sh                          # one-shot split + train + test
-│  ├─ figs/                           # output figures
-│  └─ train_log.txt                   # device/loss logs
-└─ README.md
+.
+├── data_generation/
+│   ├── protocol_0_random_walk/
+│   │   ├── generate_data_random_walk.py
+│   │   ├── prepare_strain_random_walk.py
+│   │
+│   ├── protocol_1_random_then_fixed/
+│   │   ├── compute_invariants.py
+│   │   ├── generate_data_random_then_fixed.py
+│   │   ├── inspect_stress_invariants_fictitious.py
+│   │
+│   ├── protocol_2_differential_random_then_fixed/
+│   │   ├── compute_invariants.py
+│   │   ├── generate_data_differential_random_then_fixed.py
+│   │   ├── inspect_stress_invariants_fictitious.py
+│   │
+│   ├── test_stress_relaxation/
+│   ├── test_stress_update_implementation/
+│   ├── inspect_stress_invariants.py
+│   ├── material_parameters.csv
+│   ├── tensor_utils.py
+│   ├── update_stress_ti_mcc_small.py
+│
+├── model_training/
+│   ├── constitutive_update.py
+│   ├── data_loader.py
+│   ├── job.slurm
+│   ├── loss_functions.py
+│   ├── main.py
+│   ├── model.py
+│   ├── split_dataset.py
+│   ├── tensor_utils.py
+│   ├── test_rollout.py
+│   ├── plot_rollout_stress_invariants.py
+│   ├── plot_rollout_stress_strain.py
+│   ├── run.sh
+│   ├── run_rollout_only.sh
+│   ├── run_test_stress_relaxation.sh
+│   ├── run_lambda_pstrain.sh
+│
+├── .gitignore
+└── README.md
 ```
 
 ## Quick start
