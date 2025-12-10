@@ -9,9 +9,9 @@ transversely-isotropic elasto-viscoplastic Cam-Clay stress–strain trajectories
 
 This repository contains:
 
-Synthetic data generation pipelines for multiple strain-increment protocols tailored to TI-MCC small-strain constitutive modeling.
-Physics-guided neural network training code (GRU-based seq-to-seq model).
-Rolling prediction and evaluation tools reproducing stress relaxation, p–q paths, and stress–strain curves.
+1. Synthetic data generation pipelines for multiple strain-increment protocols tailored to TI-MCC small-strain constitutive modeling.
+2. Physics-guided neural network training code (GRU-based seq-to-seq model).
+3. Rolling prediction and evaluation tools reproducing stress relaxation, p–q paths, and stress–strain curves.
 
 
 ## Repo layout
